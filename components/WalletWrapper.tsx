@@ -46,7 +46,7 @@ const WalletWrapper = (props: props) => {
             // new SolletWalletAdapter({ network }),
             // new SolletExtensionWalletAdapter({ network }),
         ],
-        [network]
+        [connection]
     );
 
     return (

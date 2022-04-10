@@ -39,6 +39,32 @@
       ]
     },
     {
+      "name": "initializeLamports",
+      "accounts": [
+        {
+          "name": "receiver",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
       "name": "transfer",
       "accounts": [
         {
@@ -73,6 +99,32 @@
           "type": "u64"
         }
       ]
+    },
+    {
+      "name": "transferLamports",
+      "accounts": [
+        {
+          "name": "sender",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "getter",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "receiver",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "availAmount",
+          "type": "u64"
+        }
+      ]
     }
   ],
   "accounts": [
@@ -87,6 +139,22 @@
           },
           {
             "name": "tokenAccount",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReceiverLamportDetails",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "receiverPubkey",
             "type": "publicKey"
           }
         ]
